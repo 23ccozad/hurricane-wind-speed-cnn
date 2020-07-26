@@ -3,11 +3,11 @@ This repo contains the code to download and prepare data to train and validate a
 ## Project Background and Motivation
 Since hurricanes are typically located over large bodies of water where weather stations are sparse, meteorologists often have to estimate the wind speed of hurricanes. They usually use buoy observations, microwave satellite imagery, and infrared satellite imagery to make these estimates.
 
-There is growing interest in applying AI and machine learning techniques to improve the accuracy of operational meteorological tasks, including estimating hurricane wind speed. I began looking into applying deep learning to hurricane wind speed estimation during the COVID-19 pandemic when the American Meteorological Society (AMS) made their journal articles publicly available at no cost. <a href="https://journals.ametsoc.org/mwr/article/147/6/2261/344590/Using-Deep-Learning-to-Estimate-Tropical-Cyclone">Wimmers et al. 2019</a> and <a href="https://journals.ametsoc.org/waf/article/34/2/447/291/Estimating-Tropical-Cyclone-Intensity-by-Satellite">Chen et al. 2019</a> both applied deep learning to hurricane wind speed estimation, achieving considerable accuracy. This piqued my interest, so I decided to take a stab at it.
+There is growing interest in applying AI and machine learning techniques to improve the accuracy of operational meteorological tasks, including estimating hurricane wind speed. I began looking into applying deep learning to hurricane wind speed estimation during the COVID-19 pandemic when the American Meteorological Society (AMS) made their journal articles publicly available at no cost. <a href="https://journals.ametsoc.org/mwr/article/147/6/2261/344590/Using-Deep-Learning-to-Estimate-Tropical-Cyclone" target="_blank">Wimmers et al. 2019</a> and <a href="https://journals.ametsoc.org/waf/article/34/2/447/291/Estimating-Tropical-Cyclone-Intensity-by-Satellite" target="_blank">Chen et al. 2019</a> both applied deep learning to hurricane wind speed estimation, achieving considerable accuracy. This piqued my interest, so I decided to take a stab at it.
 ## Data Sources
-I used images of hurricanes from the <a href="https://www.ncdc.noaa.gov/hursat/">HURSAT data project</a> run by the National Centers for Environmental Information. This database contains satellite images of hurricanes in NetCDF file format. The best part about this database: the center of each hurricane was in the middle of each image.
+I used images of hurricanes from the <a href="https://www.ncdc.noaa.gov/hursat/" target="_blank">HURSAT data project</a> run by the National Centers for Environmental Information. This database contains satellite images of hurricanes in NetCDF file format. The best part about this database: the center of each hurricane was in the middle of each image.
 
-I also used best track data from the <a href="https://www.nhc.noaa.gov/data/#hurdat">HURDAT2 database</a> provided by the National Hurricane Center. It contains records of all known hurricanes in the Atlantic and Pacific basins, as well as their wind speeds at 6-hour intervals.
+I also used best track data from the <a href="https://www.nhc.noaa.gov/data/#hurdat" target="_blank">HURDAT2 database</a> provided by the National Hurricane Center. It contains records of all known hurricanes in the Atlantic and Pacific basins, as well as their wind speeds at 6-hour intervals.
 ## Overview of Methodology By File
 `download.py`: Downloads the satellite images of hurricanes from the HURSAT database as NetCDF files.
 
@@ -45,7 +45,7 @@ This table shows one example of the neural network’s root-mean-square error (R
     <td>13.9 knots</td>
   <tr>
 </table>
-<br/><a href="https://journals.ametsoc.org/mwr/article/147/6/2261/344590/Using-Deep-Learning-to-Estimate-Tropical-Cyclone">Wimmers et al. 2019</a> achieved an RMSE of 14.3 knots when using the same HURDAT2 best track dataset to test their model on hurricanes that occurred in 2007 and 2012. Please note, a direct comparison cannot be made between the accuracy of my model and Wimmers’ model since my table shows <i>validation</i> results, and Wimmers provides <i>test</i> results.
+<br/><a href="https://journals.ametsoc.org/mwr/article/147/6/2261/344590/Using-Deep-Learning-to-Estimate-Tropical-Cyclone" target="_blank">Wimmers et al. 2019</a> achieved an RMSE of 14.3 knots when using the same HURDAT2 best track dataset to test their model on hurricanes that occurred in 2007 and 2012. Please note, a direct comparison cannot be made between the accuracy of my model and Wimmers’ model since my table shows <i>validation</i> results, and Wimmers provides <i>test</i> results.
 ## Installing and Running the Project
 Following these steps will allow you to run model.py, which performs k-fold validation on the model using the downloaded data. 
 1.	Create a directory to store the contents of this project
@@ -58,4 +58,4 @@ Following these steps will allow you to run model.py, which performs k-fold vali
 
 Note: Running this project from start to finish may take several hours.
 ## Contact the Developer
-This project was created during summer 2020 by <a href="https://www.linkedin.com/in/connor-cozad/">Connor Cozad</a>, an undergraduate student in data science and meteorology at the College of Charleston. Feel free to reach out to me by email at 23ccozad@gmail.com.
+This project was created during summer 2020 by <a href="https://www.linkedin.com/in/connor-cozad/" target="_blank">Connor Cozad</a>, an undergraduate student in data science and meteorology at the College of Charleston. Feel free to reach out to me by email at 23ccozad@gmail.com.

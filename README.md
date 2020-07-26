@@ -35,7 +35,7 @@ This table shows one example of the neural network’s root-mean-square error (R
     <td>Fold 5</td>
     <td>All Folds</td>
   <tr>
-  <tr style="border-bottom: 1.4px solid #c6cbd1;">
+  <tr>
     <td>RMSE</td>
     <td>16.9 knots</td>
     <td>12.5 knots</td>

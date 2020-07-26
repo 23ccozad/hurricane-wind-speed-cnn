@@ -36,8 +36,8 @@ Following these steps will allow you to run model.py, which performs k-fold vali
 3.	Navigate to this directory in terminal and run `conda env create --file environment.yml`
 4.	Download `download.py`, `assemble.py`, and `model.py` to this directory
 5.	Run `download.py`, which will create a directory called `Satellite Imagery` where the satellite image files will be downloaded. Warning: one year of hurricane satellite images is about 500 MB. Multiple hurricane seasons can take up a GB or more of local storage.
-6.	Run `assemble.p`y, which will create `all_images.np`y and `all_labels.npy` containing data prepared for training and validating the neural network.
+6.	Run `assemble.py`, which will create `all_images.npy` and `all_labels.npy` containing data prepared for training and validating the neural network.
 7.	Run `model.py`, which will print information to the console and save two seaborn graphs to the directory, providing information about the model’s accuracy.
 Note: Running this project from start to finish may take several hours.
 ## Contact the Developer
-This project was created during summer 2020 by Connor Cozad, an undergraduate student in data science and meteorology at the College of Charleston. Feel free to reach out to me by email at 23ccozad@gmail.com.
+This project was created during summer 2020 by <a href="https://www.linkedin.com/in/connor-cozad/">Connor Cozad</a>, an undergraduate student in data science and meteorology at the College of Charleston. Feel free to reach out to me by email at 23ccozad@gmail.com.

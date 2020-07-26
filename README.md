@@ -47,7 +47,7 @@ This table shows one example of the neural network’s root-mean-square error (R
     <td>13.9 knots</td>
   <tr>
 </table>
-<a href="https://journals.ametsoc.org/mwr/article/147/6/2261/344590/Using-Deep-Learning-to-Estimate-Tropical-Cyclone">Wimmers et al. 2019</a> achieved an RMSE of 14.3 knots when using the same HURDAT2 best track dataset to test their model on hurricanes that occurred in 2007 and 2012. Please note, the accuracy of my model and Wimmers' model cannot be directly compared since my table shows <i>validation</i> results, and Wimmers provides <i>test</i> results.
+<a href="https://journals.ametsoc.org/mwr/article/147/6/2261/344590/Using-Deep-Learning-to-Estimate-Tropical-Cyclone">Wimmers et al. 2019</a> achieved an RMSE of 14.3 knots when using the same HURDAT2 best track dataset to test their model on hurricanes that occurred in 2007 and 2012. Please note, my table shows validation results, and Wimmers provides test results.
 
 ## Install and Run the Project
 Following these steps will allow you to run `model.py`, which performs k-fold validation on the model using the downloaded data. 

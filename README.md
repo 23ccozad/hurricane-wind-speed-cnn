@@ -45,15 +45,14 @@ This table shows one example of the neural network’s root-mean-square error (R
     <td>13.9 knots</td>
   <tr>
 </table>
-
-<a href="https://journals.ametsoc.org/mwr/article/147/6/2261/344590/Using-Deep-Learning-to-Estimate-Tropical-Cyclone">Wimmers et al. 2019</a> achieved an RMSE of 14.3 knots when using the same HURDAT2 best track dataset to test their model on hurricanes that occurred in 2007 and 2012. Please note, a direct comparison cannot be made between my model and Wimmers’ model since my table shows validation results, and Wimmers provides test results.
+<br/><a href="https://journals.ametsoc.org/mwr/article/147/6/2261/344590/Using-Deep-Learning-to-Estimate-Tropical-Cyclone">Wimmers et al. 2019</a> achieved an RMSE of 14.3 knots when using the same HURDAT2 best track dataset to test their model on hurricanes that occurred in 2007 and 2012. Please note, a direct comparison cannot be made between the accuracy of my model and Wimmers’ model since my table shows <i>validation</i> results, and Wimmers provides <i>test</i> results.
 ## Installing and Running the Project
 Following these steps will allow you to run model.py, which performs k-fold validation on the model using the downloaded data. 
 1.	Create a directory to store the contents of this project
 2.	Download `environment.yml` to this directory
 3.	Navigate to this directory in terminal and run `conda env create --file environment.yml`
 4.	Download `download.py`, `assemble.py`, and `model.py` to this directory
-5.	Run `download.py`, which will create a directory called `Satellite Imagery` where the satellite image files will be downloaded. Warning: one year of hurricane satellite images is about 500 MB. Multiple hurricane seasons can take up a GB or more of local storage.
+5.	Run `download.py`, which will create a directory called `Satellite Imagery` where the satellite image files will be downloaded. <i>Warning</i>: one year of hurricane satellite images is about 500 MB. Multiple hurricane seasons can take up a GB or more of local storage.
 6.	Run `assemble.py`, which will create `all_images.npy` and `all_labels.npy` containing data prepared for training and validating the neural network.
 7.	Run `model.py`, which will print information to the console and save two seaborn graphs to the directory, providing information about the model’s accuracy.
 

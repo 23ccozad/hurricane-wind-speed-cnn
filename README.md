@@ -24,7 +24,7 @@ I also used best track data from the <a href="https://www.nhc.noaa.gov/data/#hur
 <b>Merging HURSAT and HURDAT2 to Match Satellite Images with their Wind Speed</b>: Each satellite image file provides us with the name of the hurricane, as well as the time and date of the satellite image. However, it does not provide us with the wind speed of the hurricane at that time. `assemble.py` finds the wind speed for each satellite image by searching for the hurricane’s name, date, and time in the best track dataset. Once the wind speed is retrieved, both the satellite image and wind speed are appended to NumPy arrays in unison. This effectively labels the satellite image with its wind speed, since can the satellite image and wind speed will be retrieved in unison in `model.py`.
 
 <b>Augmenting Images using Keras</b>: An analysis of the data before training the model shows that weak tropical cyclones (tropical depressions and tropical storms) significantly outnumber strong tropical cyclones (hurricanes) in the dataset. This is not surprising since tropical depressions and tropical storms are much more common than hurricanes. However, this discrepancy means that the dataset is unbalanced and causes the neural network to perform poorly on hurricanes. To balance the dataset, `model.py` uses <a href="https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html">Keras’s ImageDataGenerator</a> to augment data from existing hurricanes in the dataset. Including this augmented data in model training significantly improves model performance, especially in estimating the wind speeds for hurricanes.
-## Model Validation Results
+## Model Accuracy
 This table shows one example of the neural network’s root-mean-square error (RMSE) for each fold in k-fold validation, using hurricanes from 2007 to 2016.
 
 <table>
@@ -47,7 +47,7 @@ This table shows one example of the neural network’s root-mean-square error (R
     <td>13.9 knots</td>
   <tr>
 </table>
-<a href="https://journals.ametsoc.org/mwr/article/147/6/2261/344590/Using-Deep-Learning-to-Estimate-Tropical-Cyclone">Wimmers et al. 2019</a> achieved an RMSE of 14.3 knots when using the same HURDAT2 best track dataset to test their model on hurricanes that occurred in 2007 and 2012. Please note, my table shows validation results, and Wimmers provides test results.
+<a href="https://journals.ametsoc.org/mwr/article/147/6/2261/344590/Using-Deep-Learning-to-Estimate-Tropical-Cyclone">Wimmers et al. 2019</a> achieved an RMSE of 14.3 knots when using the same HURDAT2 best track dataset to test their model on hurricanes that occurred in 2007 and 2012. Please note, my table shows <i>validation</i> results, and Wimmers provides <i>test</i> results.
 
 ## Install and Run the Project
 Following these steps will allow you to run `model.py`, which performs k-fold validation on the model using the downloaded data. 

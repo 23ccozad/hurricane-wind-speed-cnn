@@ -1,6 +1,6 @@
 # Convolutional Neural Network (CNN) for Estimating Tropical Cyclone Wind Intensity Through Infrared Satellite Imagery
 This repo contains the code to download and prepare data to train and validate a convolutional neural network. The neural network takes a satellite image of a tropical cyclone as an input and output an estimate for the tropical cyclone’s maximum sustained wind speed.
-Project Background and Motivation
+## Project Background and Motivation
 Since hurricanes are typically located over large bodies of water where weather stations are sparse, meteorologists often have to estimate the wind speed of hurricanes. They usually use buoy observations, microwave satellite imagery, and infrared satellite imagery to make these estimates.
 There is growing interest in applying AI and machine learning techniques to improve the accuracy of operational meteorological tasks, including estimating hurricane wind speed. I began looking into applying deep learning to hurricane wind speed estimation during the COVID-19 pandemic when the American Meteorological Society (AMS) made their journal articles publicly available at no cost. Wimmers et al. 2019 and Chen et al. 2019 both applied deep learning to hurricane wind speed estimation, achieving considerable accuracy. This piqued my interest, so I decided to take a stab at it.
 ## Data Sources
@@ -8,7 +8,9 @@ I used images of hurricanes from the HURSAT data project run by the National Cen
 I also used best track data from the HURDAT2 database provided by the National Hurricane Center. It contains records of all known hurricanes in the Atlantic and Pacific basins, as well as their wind speeds at 6-hour intervals.
 ## Overview of Methodology By File
 `download.py`: Downloads the satellite images of hurricanes from the HURSAT database as NetCDF files.
+
 `assemble.py`: Labels satellite images of hurricanes with their wind speed from the best track dataset. Saves these images and labels as NumPy array files.
+
 `model.py`: Separates data into folds for k-fold validation. Augments training data. Builds, trains, and validates the neural network on each fold. Prints out information and saves two graphs about the model’s accuracy on validation data.
 ## Highlights of Methodology
 Optimized Data Downloading: `download.py` does not download files that cannot be used in the neural network. The HURSAT database has images of hurricanes from around the world, but the best track data from HURDAT2 only contains wind speeds for hurricanes from the Atlantic and Pacific Oceans. So, before downloading a hurricane’s satellite imagery from HURSAT, the code checks to see whether the best track data has records for that hurricane. If best track has no data for that hurricane, the satellite image is not downloaded. This conserves local storage space and cuts down on execution time.

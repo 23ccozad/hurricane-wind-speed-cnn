@@ -14,6 +14,8 @@ I also used best track data from the <a href="https://www.nhc.noaa.gov/data/#hur
 `assemble.py`: Labels satellite images of hurricanes with their wind speed from the best track dataset. Saves these images and labels as NumPy array files.
 
 `model.py`: Separates data into folds for k-fold validation. Augments training data. Builds, trains, and validates the neural network on each fold. Prints out information and saves two graphs about the model’s accuracy on validation data.
+
+`view_images.py` (Optional): Does not play a pivotal role in running the model, but may be of interest to the curious developer. Shows 10 random images from the set of satellite images in `images.npy`.
 ## Highlights of Methodology
 <b>Optimized Data Downloading</b>: `download.py` does not download files that cannot be used in the neural network. The HURSAT database has images of hurricanes from around the world, but the best track data from HURDAT2 only contains wind speeds for hurricanes from the Atlantic and Pacific Oceans. So, before downloading a hurricane’s satellite imagery from HURSAT, the code checks to see whether the best track data has records for that hurricane. If best track has no data for that hurricane, the satellite image is not downloaded. This conserves local storage space and cuts down on execution time.
 
@@ -54,7 +56,7 @@ Following these steps will allow you to run model.py, which performs k-fold vali
 3.	Navigate to this directory in terminal and run `conda env create --file environment.yml`
 4.	Download `download.py`, `assemble.py`, and `model.py` to this directory
 5.	Run `download.py`, which will create a directory called `Satellite Imagery` where the satellite image files will be downloaded. <i>Warning</i>: one year of hurricane satellite images is about 500 MB. Multiple hurricane seasons can take up a GB or more of local storage.
-6.	Run `assemble.py`, which will create `all_images.npy` and `all_labels.npy` containing data prepared for training and validating the neural network.
+6.	Run `assemble.py`, which will create `images.npy` and `labels.npy` containing data prepared for training and validating the neural network.
 7.	Run `model.py`, which will print information to the console and save two seaborn graphs to the directory, providing information about the model’s accuracy.
 
 Note: Running this project from start to finish may take several hours.

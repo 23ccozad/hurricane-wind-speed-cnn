@@ -55,7 +55,7 @@ Following these steps will allow you to run `model.py`, which performs k-fold va
 2.	Download `environment.yml` to this directory
 3.	Navigate to this directory in Anaconda Prompt and run `conda env create --file environment.yml`
 4.	Download `download.py`, `assemble.py`, and `model.py` to this directory. When you run these files in steps 5, 6, and 7, make sure you are running them in the conda environment you created in step 3.
-5.	Run `download.py`, which will create a directory called `Satellite Imagery` where the satellite image files will be downloaded. Make sure when you run `download.py`<i>Warning</i>: one year of hurricane satellite images is about 500 MB. Multiple hurricane seasons can take up a GB or more of local storage.
+5.	Run `download.py`, which will create a directory called `Satellite Imagery` where the satellite image files will be downloaded. <i>Warning</i>: one year of hurricane satellite images is about 500 MB. Multiple hurricane seasons can take up a GB or more of local storage.
 6.	Run `assemble.py`, which will create `images.npy` and `labels.npy` containing data prepared for training and validating the neural network.
 7.	Run `model.py`, which will print information to the console and save two seaborn graphs to the directory, providing information about the model’s accuracy.
 

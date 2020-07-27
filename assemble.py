@@ -77,7 +77,7 @@ for i in range(len(files)):
     print('\rProcessing Samples... ' + str(round(((i + 1) / num_files) * 100, 1)) + '% (' + str(i + 1) + ' of ' + str(
         num_files) + ')', end='')
 
-print('Saving NumPy arrays...')
+print('\nSaving NumPy arrays...')
 
 # Turn the list of images and labels into NumPy arrays
 images = np.array(images)

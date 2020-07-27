@@ -38,7 +38,7 @@ def download_hursat(years):
             # out storms in basins other than the Atlantic or Pacific, since the best track dataset doesn't have
             # information for those storms.
             storm_name = storm_file_url.split('_')[-2]
-            year = int(storm_file_url.split('_')[-3][:4])
+            year = int(storm_file_url.split('_')[3][:4])
             file_has_match_in_best_track = not best_track_data.loc[
                 (best_track_data['year'] == year) & (best_track_data['storm_name'] == storm_name)
             ].empty

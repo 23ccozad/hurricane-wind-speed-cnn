@@ -8,7 +8,11 @@ There is growing interest in applying AI and machine learning techniques to impr
 I used images of hurricanes from the <a href="https://www.ncdc.noaa.gov/hursat/">HURSAT data project</a> run by the National Centers for Environmental Information. This database contains satellite images of hurricanes in NetCDF file format. The best part about this database: the center of each hurricane was in the middle of each image.
 
 I also used best track data from the <a href="https://www.nhc.noaa.gov/data/#hurdat">HURDAT2 database</a> provided by the National Hurricane Center. It contains records of all known hurricanes in the Atlantic and Pacific basins, as well as their wind speeds at 6-hour intervals.
-## Overview of Methodology By File
+## Overview of Files
+`environment.yml`: Lists out all libraries (and their dependencies) neccessary to run the Python files. Anaconda reads this file to create an environment in which the Python files can be interpreted and executed.
+
+`besttrack.csv`: Contains the data cleaned from the National Hurricane Center's HURDAT2 database found at this <a href="https://www.nhc.noaa.gov/data/hurdat/hurdat2-1851-2019-052520.txt">link</a>. `download.py` and `assemble.py` rely on this data to function properly.
+
 `download.py`: Downloads the satellite images of hurricanes from the HURSAT database as NetCDF files.
 
 `assemble.py`: Labels satellite images of hurricanes with their wind speed from the best track dataset. Saves these images and labels as NumPy array files.
@@ -54,7 +58,7 @@ Following these steps will allow you to run `model.py`, which performs k-fold va
 1.	Create a directory to store the contents of this project
 2.	Download `environment.yml` to this directory
 3.	Navigate to this directory in Anaconda Prompt and run `conda env create --file environment.yml`
-4.	Download `download.py`, `assemble.py`, and `model.py` to this directory. When you run these files in steps 5, 6, and 7, make sure you are running them in the conda environment you created in step 3.
+4.	Download `download.py`, `assemble.py`, `model.py`, and `besttrack.csv` to this directory. When you run these files in steps 5, 6, and 7, make sure you are running them in the conda environment you created in step 3.
 5.	Run `download.py`, which will create a directory called `Satellite Imagery` where the satellite image files will be downloaded. <i>Warning</i>: one year of hurricane satellite images is about 500 MB. Multiple hurricane seasons can take up a GB or more of local storage.
 6.	Run `assemble.py`, which will create `images.npy` and `labels.npy` containing data prepared for training and validating the neural network.
 7.	Run `model.py`, which will print information to the console and save two seaborn graphs to the directory, providing information about the model’s accuracy.

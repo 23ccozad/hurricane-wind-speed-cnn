@@ -53,7 +53,6 @@ def download_hursat(years):
                     os.makedirs('Satellite Imagery')
 
                 # Open the .tar.gz and copy it's contents from the web, onto our computer
-                print(storm_file_url)
                 request = requests.get(storm_file_url, allow_redirects=True)
                 open(storm_file_path, 'wb').write(request.content)
                 request.close()

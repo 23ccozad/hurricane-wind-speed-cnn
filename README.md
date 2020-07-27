@@ -19,7 +19,7 @@ I also used best track data from the <a href="https://www.nhc.noaa.gov/data/#hur
 
 <b>`model.py`</b>: Separates data into folds for k-fold validation. Augments training data. Builds, trains, and validates the neural network on each fold. Prints out information and saves two graphs about the model’s accuracy on validation data.
 
-<b>`view_images.py</b>` (Optional): Does not play a pivotal role in running the model, but may be of interest to the curious developer. Shows 10 random images from the set of satellite images in `images.npy`.
+<b>`view_images.py`</b> (Optional): Does not play a pivotal role in running the model, but may be of interest to the curious developer. Shows 10 random images from the set of satellite images in `images.npy`.
 ## Highlights of Methodology
 <b>Optimized Data Downloading</b>: `download.py` does not download files that cannot be used in the neural network. The HURSAT database has images of hurricanes from around the world, but the best track data from HURDAT2 only contains wind speeds for hurricanes from the Atlantic and Pacific Oceans. So, before downloading a hurricane’s satellite imagery from HURSAT, the code checks to see whether the best track data has records for that hurricane. If best track has no data for that hurricane, the satellite image is not downloaded. This conserves local storage space and cuts down on execution time.
 

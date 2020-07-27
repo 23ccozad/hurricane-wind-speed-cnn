@@ -103,5 +103,3 @@ dependencies:
   - wrapt=1.12.1=py37he774522_1
   - yaml=0.2.5=he774522_0
   - zlib=1.2.11=h62dcd97_4
-prefix: C:\Users\23cco\anaconda3\envs\hurricane_wind_speed
-

@@ -65,4 +65,4 @@ Following these steps will allow you to run `model.py`, which performs k-fold va
 
 Note: Running this project from start to finish may take several hours.
 ## Contact the Developer
-This project was created during summer 2020 by <a href="https://www.linkedin.com/in/connor-cozad/">Connor Cozad</a>, an undergraduate student in data science and meteorology at the College of Charleston. Feel free to reach out to me by email at 23ccozad@gmail.com.
+This project was created during summer 2020 by <a href="https://www.linkedin.com/in/connor-cozad/">Connor Cozad</a>, an undergraduate student in data science at the College of Charleston. Feel free to reach out to me by email at 23ccozad@gmail.com.
